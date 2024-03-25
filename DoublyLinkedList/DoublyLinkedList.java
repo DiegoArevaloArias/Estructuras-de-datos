@@ -123,15 +123,21 @@ public class DoublyLinkedList{
     return false;
   }
 
-  public void erase(int data){
+  public void erase(int index){
     Node node = head;
-    while(node != null){
-      if(node.data == data){
-        node.prev.next = node.next;
-        node.next.prev = node.prev;
-      }
+    for(int i = 0; i < index; i++){
       node = node.next;
     }
+    node.prev.next = node.next;
+    node.next.prev = node.prev;
+  }
+
+  public int get(int index){
+    Node node = head;
+      for(int i = 0; i < index; i++){
+        node = node.next;
+      }
+      return node.data;
   }
   
 }

@@ -17,16 +17,12 @@ public class SortedListDoublyLinkedList{
       list.pushBack(data);
     }
   
-    public void remove(int data){
-      list.erase(data);
+    public void remove(int index){
+      list.erase(index);
     }
   
     public int get(int index){
-      Node node = list.head;
-      for(int i = 0; i < index; i++){
-        node = node.next;
-      }
-      return node.data;
+      return list.get(index);
     }
   
     public int size(){

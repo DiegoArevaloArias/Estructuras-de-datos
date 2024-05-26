@@ -3,9 +3,6 @@ import java.util.Random;
 public class TestsDoublyLinkedList {
   public static void main(String[] args) {
 
-    // ignorar esto
-    int i = 0;
-
 
     int[] tamañosDatos = { 10000, 100000, 1000000, 10000000, 100000000 };
     Random random = new Random();

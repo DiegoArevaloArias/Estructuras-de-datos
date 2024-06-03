@@ -1,6 +1,6 @@
 package SegundaEntregaProyecto.Monticulos;
 
-public class MaxHeapWithTrees {
+public class MinHeapWithTrees {
 
     private Node root, lastNode;
 
@@ -11,7 +11,7 @@ public class MaxHeapWithTrees {
 
     }
 
-    public MaxHeapWithTrees(){
+    public MinHeapWithTrees(){
         root = null;
         lastNode = root;
     }
@@ -84,7 +84,7 @@ public class MaxHeapWithTrees {
             int dataNode = node.data;
             int dataParentNode = node.parent.data;
 
-            if(dataNode > dataParentNode){
+            if(dataNode < dataParentNode){
 
                 node.parent.data = dataNode;
                 node.data = dataParentNode;
@@ -108,9 +108,9 @@ public class MaxHeapWithTrees {
             int dataLeftNode = node.left.data;
             int dataRightNode = node.right.data;
 
-            if(dataLeftNode > dataRightNode){
+            if(dataLeftNode < dataRightNode){
 
-                if(dataNode < dataLeftNode){
+                if(dataNode > dataLeftNode){
 
                     node.left.data = dataNode;
                     node.data = dataLeftNode;
@@ -120,7 +120,7 @@ public class MaxHeapWithTrees {
 
             } else {
 
-                if(dataNode < dataRightNode){
+                if(dataNode > dataRightNode){
 
                     node.right.data = dataNode;
                     node.data = dataRightNode;
@@ -135,7 +135,7 @@ public class MaxHeapWithTrees {
             int dataNode = node.data;
             int dataLeftNode = node.left.data;
 
-            if(dataNode < dataLeftNode){
+            if(dataNode > dataLeftNode){
 
                 node.left.data = dataNode;
                 node.data = dataLeftNode;
@@ -148,7 +148,7 @@ public class MaxHeapWithTrees {
             int dataNode = node.data;
             int dataRightNode = node.right.data;
 
-            if(dataNode < dataRightNode){
+            if(dataNode > dataRightNode){
 
                 node.right.data = dataNode;
                 node.data = dataRightNode;
@@ -284,7 +284,7 @@ public class MaxHeapWithTrees {
         if(!inHeap(node))
             throw new Exception("the node is not in the heap");
 
-        node.data = getMax() + 1;
+        node.data = getMax() - 1;
 
         siftUp(node);
         
@@ -312,7 +312,7 @@ public class MaxHeapWithTrees {
 
         node.data = priority;
 
-        if(node.parent != null && node.data > node.parent.data)
+        if(node.parent != null && node.data < node.parent.data)
             siftUp(node);
         else
             siftDown(node);

@@ -2,13 +2,20 @@ package SegundaEntregaProyecto.Monticulos;
 
 import java.util.Random;
 
-public class TestsMaxHeapWithTrees {
+public class TestsMinHeapWithTrees {
 
     public static void main(String[] args) throws Exception{
         
-        MaxHeapWithTrees heap = new MaxHeapWithTrees();
+        MinHeapWithTrees heap = new MinHeapWithTrees();
+        heap.insert(0);
+        heap.insert(2);
+        heap.insert(0);
+        heap.insert(1);
+        heap.insert(-1);
+        heap.extractMax();
+        heap.printHeapByLevel();
         
-        pruebaConPromedios();
+        //pruebaConPromedios();
 
     }
 
@@ -105,3 +112,4 @@ public class TestsMaxHeapWithTrees {
     }
     
 }
+
